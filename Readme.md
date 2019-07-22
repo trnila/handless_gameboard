@@ -1,7 +1,7 @@
 # handless gameboard - a gaming keyboard for (temporary, I hope) handless dudes
 You are soo bored and wanna play games but you've got no left hand? No problem, just use your foot to control some key presses!
 
-[](gameboard.jpg)
+![gameboard](gameboard.jpg)
 
 ## requirements
 - at least one hand
