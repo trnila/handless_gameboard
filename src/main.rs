@@ -8,10 +8,13 @@ use uinput::event::keyboard::Key;
 use std::time::Duration;
 use std::io::prelude::*;
 use serial::prelude::*;
+use std::env;
 
 fn main() {
+    let args: Vec<String> = env::args().collect();
+
     let profiles = config::parse("sam2.txt");
-    let profile = match profiles.get("sam2") {
+    let profile = match profiles.get(&args[1]) {
         Some(m) => m,
         None => panic!("unknown profile")
     };

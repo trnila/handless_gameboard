@@ -50,6 +50,10 @@ fn tokenize(s: &str) -> Vec<Token> {
         }
     }
 
+	if word.len() > 0 {
+    	toks.push(Token::Word(word));
+	}
+
     toks
 }
 
@@ -164,4 +168,31 @@ pub fn parse(path: &str) -> std::collections::HashMap<String, Bindings> {
     }
 
     profiles
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_add() {
+        assert_eq!(
+			tokenize("hello"), 
+			vec!(Token::Word("hello".to_string()))
+		);
+
+        assert_eq!(
+			tokenize("[ hello]\nfoo=bar baz"), 
+			vec!(
+                Token::OpenBracket,
+                Token::Word("hello".to_string()), 
+                Token::CloseBracket,
+                Token::NewLine,
+                Token::Word("foo".to_string()),
+                Token::Assignment,
+                Token::Word("bar".to_string()),
+                Token::Word("baz".to_string())
+            )
+		);
+    }
 }
