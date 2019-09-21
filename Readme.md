@@ -18,5 +18,10 @@ These keys are then mapped to profile-specific mappings and propagated to the sy
 $ ./gameboard.py borderlands2
 ```
 
+## handless gameboard v2: oops I did it AGAIN!!!
+Team of our researchers developed more secure implementation of gameboard in Rust language, which deprecated previous version,
+Prototype also includes integrated joystick for smooth control.
+We are currently evaluating this version, but we dont expect further improvements for really long long long long time.
+
 ## disclaimer
 this prototype has been wired and programmed using single hand
